@@ -7,7 +7,10 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {}
+		extend: {},
+		fontFamily: {
+			league: ['League Spartan']
+		}
 	},
 
 	plugins: [typography, forms, daisyui]
