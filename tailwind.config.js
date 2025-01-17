@@ -8,9 +8,7 @@ export default {
 
 	theme: {
 		extend: {},
-		fontFamily: {
-			league: ['League Spartan']
-		}
+		fontFamily: {}
 	},
 
 	plugins: [typography, forms, daisyui]
