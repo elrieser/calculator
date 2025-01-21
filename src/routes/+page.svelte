@@ -9,99 +9,71 @@
 	// 	}
 	// }
 
-	//let eingabe = '';
-	//let operator = '';
-	// function addieren() {}
+	// document.querySelectorAll('button').forEach(function ausgabe(b) {
+	// 	var c = b.textContent;
+	// 	switch (c) {
+	// 		case '9':
+	// 		case '8':
+	// 		case '7':
+	// 		case '6':
+	// 		case '5':
+	// 		case '4':
+	// 		case '3':
+	// 		case '2':
+	// 		case '1':
+	// 		case '0':
+	// 		case '.':
+	// 			b.addEventListener('click', function () {
+	// 				input(c);
+	// 			});
+	// 			break;
 
-	// function subtrahieren() {}
+	// 		case '+':
+	// 		case '-':
+	// 		case '×':
+	// 		case '/':
+	// 			b.addEventListener('click', function () {
+	// 				operator(c);
+	// 			});
 
-	// function multiplizieren() {}
+	// 			break;
 
-	// function dividieren() {}
+	// 		case '=':
+	// 			b.addEventListener('click', result);
 
-	// function berechnen() {}
+	// 			break;
 
-	// function reset() {
-	// 	eingabe = '';
-	// }
-
-	// function del() {}
-
-	// const resultScreen = document.getElementById('result');
-	// let currentInput = ''; // Speichert die aktuelle Eingabe
-	// let operator = ''; // Speichert den aktuellen Operator
-	// let firstOperand = null; // Speichert die erste Zahl
-
-	// // Funktion zum Aktualisieren des Bildschirms
-	// function updateScreen(value) {
-	// 	resultScreen.textContent = value || '0'; // Zeige "0", wenn keine Eingabe
-	// }
-
-	// // Zahlen-Button gedrückt
-	// function handleNumberClick(number) {
-	// 	currentInput += number; // Aktuelle Zahl hinzufügen
-	// 	updateScreen(currentInput); // Bildschirm aktualisieren
-	// }
-
-	// // Operator-Button gedrückt
-	// function handleOperatorClick(op) {
-	// 	if (currentInput) {
-	// 		if (firstOperand === null) {
-	// 			firstOperand = parseFloat(currentInput); // Erste Zahl speichern
-	// 		}
-	// 		operator = op; // Operator speichern
-	// 		currentInput = ''; // Aktuelle Eingabe zurücksetzen
+	// 		case 'DEL':
+	// 			b.addEventListener('click', clear);
+	// 			break;
 	// 	}
-	// }
+	// });
 
-	// // Gleichheitszeichen (=) gedrückt
-	// function handleEqualsClick() {
-	// 	if (firstOperand !== null && currentInput) {
-	// 		const secondOperand = parseFloat(currentInput); // Zweite Zahl speichern
-	// 		let result;
+	let ausgabe = '';
 
-	// 		// Berechnung mit if-else-Anweisungen
-	// 		if (operator === '+') {
-	// 			result = firstOperand + secondOperand;
-	// 		} else if (operator === '-') {
-	// 			result = firstOperand - secondOperand;
-	// 		} else if (operator === '*') {
-	// 			result = firstOperand * secondOperand;
-	// 		} else if (operator === '/') {
-	// 			result = secondOperand === 0 ? 'Error' : firstOperand / secondOperand;
-	// 		}
+	function del() {
+		ausgabe = ausgabe.substring(0, ausgabe.length - 1);
+	}
 
-	// 		updateScreen(result); // Ergebnis anzeigen
-	// 		firstOperand = result; // Ergebnis für weitere Berechnungen speichern
-	// 		currentInput = ''; // Eingabe zurücksetzen
-	// 	}
-	// }
+	function reset() {
+		ausgabe = '';
+	}
 
-	// // Löschen-Button (DEL) gedrückt
-	// function handleDeleteClick() {
-	// 	currentInput = currentInput.slice(0, -1); // Letztes Zeichen entfernen
-	// 	updateScreen(currentInput);
-	// }
-
-	// // Reset-Button gedrückt
-	// function handleResetClick() {
-	// 	currentInput = '';
-	// 	operator = '';
-	// 	firstOperand = null;
-	// 	updateScreen('0'); // Zurücksetzen auf "0"
-	// }
+	function berechnen() {
+		ausgabe = eval(ausgabe);
+	}
 </script>
 
 <div
-	class="flex flex-col place-items-center place-content-center w-[450px] h-[550px] place-self-center space-y-4 border border-sky-50"
+	class="flex flex-col place-items-center place-content-center w-[450px] h-[550px] place-self-center space-y-4"
 >
-	<div class="flex space-x-[190px] w-[450px] h-[40px] border border-sky-50">
-		<div class="flex w-[110px] h-[40px] border border-sky-50">
+	<div class="flex space-x-[190px] w-[450px] h-[40px]">
+		<div class="flex w-[110px] h-[40px]">
 			<p class="text-xl font-bold text-white text-center">calc</p>
 		</div>
 		<div class="flex w-[150px] h-[40px] border border-sky-50">
 			<div class="flex w-[75px] h-[40px] border border-sky-50">
-				<p class="text-white">Theme</p>
+				<p class="text-white">THEME</p>
 			</div>
 			<div class="flex flex-col w-[75px] h-[40px] border border-sky-50">
 				<div class="flex w-[75px] h-[20px] border border-sky-50">
@@ -116,80 +88,94 @@
 		</div>
 	</div>
 	<div
-		class="flex w-[450px] h-[100px] border border-sky-50 text-[55px] font-bold bg-[#182034] rounded-md text-white place-content-end items-center"
+		class="flex w-[450px] h-[100px] text-[55px] font-bold bg-[#182034] rounded-md text-white place-content-end items-center"
 	>
-		<p>{eingabe} {operator}</p>
+		<p>{ausgabe}</p>
 	</div>
 	<div
 		class="flex flex-col rounded-md place-content-center w-[450px] h-[350px] text-[25px] font-bold bg-[#232C43]"
 	>
 		<div class="flex place-content-evenly items-center w-[450px] h-[70px]">
 			<button
-				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				on:click={(eingabe = '7')}>7</button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]
+				"
+				on:click={(ausgabe = ausgabe + '7')}>7</button
 			>
 			<button
-				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				on:click={(eingabe = '8')}>8</button
-			>
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>9</button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '8')}>8</button
 			>
 			<button
-				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#637097] hover:bg-[#7388c5] text-white"
-				>DEL</button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '9')}>9</button
+			>
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#637097] hover:bg-[#7388c5] text-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={del}>DEL</button
 			>
 		</div>
 		<div class="flex place-content-evenly items-center w-[450px] h-[70px]">
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>4</button
-			>
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>5</button
-			>
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>6</button
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '4')}>4</button
 			>
 			<button
-				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				on:click={(operator = '+')}>+</button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '5')}>5</button
+			>
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '6')}>6</button
+			>
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + ' + ')}>+</button
 			>
 		</div>
 		<div class="flex place-content-evenly items-center w-[450px] h-[70px]">
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>1</button
-			>
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>2</button
-			>
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>3</button
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '1')}>1</button
 			>
 			<button
-				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				on:click={(operator = '-')}>-</button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '2')}>2</button
+			>
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '3')}>3</button
+			>
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + ' - ')}>-</button
 			>
 		</div>
 		<div class="flex place-content-evenly items-center w-[450px] h-[70px]">
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>.</button
-			>
-			<button class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				>0</button
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + '.')}>.</button
 			>
 			<button
-				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				on:click={(operator = '/')}>/</button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + ' 0 ')}>0</button
 			>
 			<button
-				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white"
-				on:click={(operator = 'x')}>x</button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + ' / ')}>/</button
+			>
+			<button
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={(ausgabe = ausgabe + ' * ')}>x</button
 			>
 		</div>
 		<div class="flex place-content-evenly items-center w-[450px] h-[70px] text-white">
-			<button class="h-[40px] w-[180px] rounded-md bg-[#637097] hover:bg-[#7388c5]">Reset</button>
-			<button class="h-[40px] w-[180px] rounded-md bg-[#de4130] hover:bg-[#ff3f3f]" on:click={reset}
-				>=</button
+			<button
+				class="h-[40px] w-[180px] rounded-md bg-[#637097] hover:bg-[#7388c5] shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={reset}>Reset</button
+			>
+			<button
+				class="h-[40px] w-[180px] rounded-md bg-[#de4130] hover:bg-[#ff3f3f] shadow-[0px_4px_0px_#b8b8b8]"
+				on:click={berechnen}>=</button
 			>
 		</div>
 	</div>
