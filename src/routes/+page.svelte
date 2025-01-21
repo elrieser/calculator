@@ -1,54 +1,4 @@
 <script>
-	// let checked = 2;
-	// function switchtoggle() {
-	// 	if (checked % 2 === 0) {
-	// 		document.getElementById('my-toggle').indeterminate = true;
-	// 		checked++;
-	// 	} else {
-	// 		checked++;
-	// 	}
-	// }
-
-	// document.querySelectorAll('button').forEach(function ausgabe(b) {
-	// 	var c = b.textContent;
-	// 	switch (c) {
-	// 		case '9':
-	// 		case '8':
-	// 		case '7':
-	// 		case '6':
-	// 		case '5':
-	// 		case '4':
-	// 		case '3':
-	// 		case '2':
-	// 		case '1':
-	// 		case '0':
-	// 		case '.':
-	// 			b.addEventListener('click', function () {
-	// 				input(c);
-	// 			});
-	// 			break;
-
-	// 		case '+':
-	// 		case '-':
-	// 		case '×':
-	// 		case '/':
-	// 			b.addEventListener('click', function () {
-	// 				operator(c);
-	// 			});
-
-	// 			break;
-
-	// 		case '=':
-	// 			b.addEventListener('click', result);
-
-	// 			break;
-
-	// 		case 'DEL':
-	// 			b.addEventListener('click', clear);
-	// 			break;
-	// 	}
-	// });
-
 	let ausgabe = '';
 
 	function del() {
@@ -72,18 +22,16 @@
 			<p class="text-xl font-bold text-white text-center">calc</p>
 		</div>
 		<div class="flex w-[150px] h-[40px] border border-sky-50">
-			<div class="flex w-[75px] h-[40px] border border-sky-50">
-				<p class="text-white">THEME</p>
+			<div class="flex place-items-center w-[75px] h-[40px] border border-sky-50">
+				<p class="text-white text-[13px]">THEME</p>
 			</div>
 			<div class="flex flex-col w-[75px] h-[40px] border border-sky-50">
-				<div class="flex w-[75px] h-[20px] border border-sky-50">
+				<div class="flex place-content-evenly w-[75px] h-[20px] border border-sky-50 text-white">
 					<p>1</p>
 					<p>2</p>
 					<p>3</p>
 				</div>
-				<div class="flex w-[75px] h-[20px] border border-sky-50">
-					<!-- <input type="checkbox" class="toggle" id="my-toggle" on:click={switchtoggle} /> -->
-				</div>
+				<div class="flex w-[75px] h-[20px] border border-sky-50"></div>
 			</div>
 		</div>
 	</div>
