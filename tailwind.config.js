@@ -11,5 +11,27 @@ export default {
 		fontFamily: {}
 	},
 
-	plugins: [typography, forms, daisyui]
+	plugins: [typography, forms, daisyui],
+	daisyui: {
+		themes: [
+			{
+				blau: {
+					...require('daisyui/src/theming/themes')['light'],
+					primary: '#a729f5'
+				}
+			},
+			{
+				lila: {
+					...require('daisyui/src/theming/themes')['dark'],
+					primary: '#a729f5'
+				}
+			},
+			{
+				weiß: {
+					...require('daisyui/src/theming/themes')['dark'],
+					primary: '#a729f5'
+				}
+			}
+		]
+	}
 };
