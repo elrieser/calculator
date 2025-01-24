@@ -105,7 +105,7 @@
 			>
 			<button
 				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
-				on:click={(ausgabe = ausgabe + ' 0 ')}>0</button
+				on:click={(ausgabe = ausgabe + '0')}>0</button
 			>
 			<button
 				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
@@ -113,7 +113,7 @@
 			>
 			<button
 				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#eae3e3] hover:bg-white shadow-[0px_4px_0px_#b8b8b8]"
-				on:click={(ausgabe = ausgabe + ' * ')}>x</button
+				on:click={(ausgabe = ausgabe + ' * ')}>*</button
 			>
 		</div>
 		<div class="flex place-content-evenly items-center w-[450px] h-[70px] text-white">
