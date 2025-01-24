@@ -18,11 +18,11 @@
 	class="flex flex-col place-items-center place-content-center w-[450px] h-[550px] place-self-center space-y-4"
 >
 	<div class="flex space-x-[190px] w-[450px] h-[40px]">
-		<div class="flex w-[110px] h-[40px]">
+		<div class="flex place-items-end w-[110px] h-[40px]">
 			<p class="text-xl font-bold text-white text-center">calc</p>
 		</div>
 		<div class="flex w-[150px] h-[40px] border border-sky-50">
-			<div class="flex place-items-center w-[75px] h-[40px] border border-sky-50">
+			<div class="flex place-items-end w-[75px] h-[40px] border border-sky-50">
 				<p class="text-white text-[13px]">THEME</p>
 			</div>
 			<div class="flex flex-col w-[75px] h-[40px] border border-sky-50">
@@ -58,7 +58,7 @@
 				on:click={(ausgabe = ausgabe + '9')}>9</button
 			>
 			<button
-				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#637097] hover:bg-[#7388c5] text-white shadow-[0px_4px_0px_#b8b8b8]"
+				class="rounded-md drop-shadow-md h-[40px] w-[70px] bg-[#637097] hover:bg-[#7388c5] text-white shadow-[0px_4px_0px_#6375ab]"
 				on:click={del}>DEL</button
 			>
 		</div>
@@ -118,11 +118,11 @@
 		</div>
 		<div class="flex place-content-evenly items-center w-[450px] h-[70px] text-white">
 			<button
-				class="h-[40px] w-[180px] rounded-md bg-[#637097] hover:bg-[#7388c5] shadow-[0px_4px_0px_#b8b8b8]"
+				class="h-[40px] w-[180px] rounded-md bg-[#637097] hover:bg-[#7388c5] shadow-[0px_4px_0px_#6375ab]"
 				on:click={reset}>Reset</button
 			>
 			<button
-				class="h-[40px] w-[180px] rounded-md bg-[#de4130] hover:bg-[#ff3f3f] shadow-[0px_4px_0px_#b8b8b8]"
+				class="h-[40px] w-[180px] rounded-md bg-[#de4130] hover:bg-[#ff3f3f] shadow-[0px_4px_0px_#c33030]"
 				on:click={berechnen}>=</button
 			>
 		</div>
