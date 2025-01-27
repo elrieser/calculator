@@ -1,15 +1,19 @@
 <script>
 	let ausgabe = '';
 
-	function toggleState() {
-		const element = event.target;
-		console.log(element);
-		const state = parseInt(element.getAttribute('data-state'), 10);
-		const newState = (state + 1) % 3;
-		element.setAttribute('data-state', newState);
+	export let theme = localStorage.getItem('theme') || 'dark';
+	document.body.className = theme;
 
-		const slider = element.querySelector('#punkt');
-		slider.style.transform = `translateX(${newState * 25}px)`;
+	function switchTheme() {
+		if (theme === 'dark') {
+			theme = 'light';
+			document.body.className = 'light';
+			localStorage.setItem('theme', 'light');
+		} else {
+			theme = 'dark';
+			document.body.className = 'dark';
+			localStorage.setItem('theme', 'dark');
+		}
 	}
 
 	function del() {
@@ -26,7 +30,8 @@
 </script>
 
 <div
-	class="flex flex-col place-items-center place-content-center w-[450px] h-[550px] place-self-center space-y-4"
+	data-theme={theme}
+	class=" flex flex-col place-items-center place-content-center w-[450px] h-[550px] place-self-center space-y-4"
 >
 	<div class="flex space-x-[190px] w-[450px] h-[40px]">
 		<div class="flex place-items-end w-[110px] h-[40px]">
@@ -40,20 +45,14 @@
 				<div class="flex place-content-evenly w-[75px] h-[20px] text-white">
 					<p>1</p>
 					<p>2</p>
-					<p>3</p>
 				</div>
-				<div class="flex w-[75px] h-[20px]">
-					<div
-						class="flex w-[75px] h-[20px] relative bg-gray-300 rounded-full cursor-pointer"
-						data-state="0"
-						onclick={toggleState}
-					>
-						<div
-							id="punkt"
-							class="absolute w-[22px] h-[18px] bg-blue-500 rounded-full transition-all left-[1px] top-[1px]"
-							style="transform: translateX(0px);"
-						></div>
-					</div>
+				<div class="flex w-[75px] h-[20px] place-content-center">
+					<input
+						type="checkbox"
+						class="toggle bg-red-500 [--tglbg:#182034] hover:bg-red-700"
+						checked={theme === 'dark'}
+						onclick={switchTheme}
+					/>
 				</div>
 			</div>
 		</div>

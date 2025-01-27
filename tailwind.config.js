@@ -7,27 +7,20 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {},
-		fontFamily: {}
+		extend: {}
 	},
 
 	plugins: [typography, forms, daisyui],
 	daisyui: {
 		themes: [
 			{
-				blau: {
+				light: {
 					...require('daisyui/src/theming/themes')['light'],
 					primary: '#a729f5'
 				}
 			},
 			{
-				lila: {
-					...require('daisyui/src/theming/themes')['dark'],
-					primary: '#a729f5'
-				}
-			},
-			{
-				weiß: {
+				dark: {
 					...require('daisyui/src/theming/themes')['dark'],
 					primary: '#a729f5'
 				}
