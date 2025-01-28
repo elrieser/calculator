@@ -1,20 +1,20 @@
 <script>
 	let ausgabe = '';
 
-	export let theme = localStorage.getItem('theme') || 'dark';
-	document.body.className = theme;
+	// export let theme = localStorage.getItem('theme') || 'dark';
+	// document.body.className = theme;
 
-	function switchTheme() {
-		if (theme === 'dark') {
-			theme = 'light';
-			document.body.className = 'light';
-			localStorage.setItem('theme', 'light');
-		} else {
-			theme = 'dark';
-			document.body.className = 'dark';
-			localStorage.setItem('theme', 'dark');
-		}
-	}
+	// function switchTheme() {
+	// 	if (theme === 'dark') {
+	// 		theme = 'light';
+	// 		document.body.className = 'light';
+	// 		localStorage.setItem('theme', 'light');
+	// 	} else {
+	// 		theme = 'dark';
+	// 		document.body.className = 'dark';
+	// 		localStorage.setItem('theme', 'dark');
+	// 	}
+	// }
 
 	function del() {
 		ausgabe = ausgabe.substring(0, ausgabe.length - 1);
@@ -30,7 +30,6 @@
 </script>
 
 <div
-	data-theme={theme}
 	class=" flex flex-col place-items-center place-content-center w-[450px] h-[550px] place-self-center space-y-4"
 >
 	<div class="flex space-x-[190px] w-[450px] h-[40px]">
@@ -50,8 +49,7 @@
 					<input
 						type="checkbox"
 						class="toggle bg-red-500 [--tglbg:#182034] hover:bg-red-700"
-						checked={theme === 'dark'}
-						onclick={switchTheme}
+						checked="checked"
 					/>
 				</div>
 			</div>
