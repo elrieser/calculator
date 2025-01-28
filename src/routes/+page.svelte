@@ -1,20 +1,10 @@
 <script>
 	let ausgabe = '';
+	let toggleState = 0;
 
-	// export let theme = localStorage.getItem('theme') || 'dark';
-	// document.body.className = theme;
-
-	// function switchTheme() {
-	// 	if (theme === 'dark') {
-	// 		theme = 'light';
-	// 		document.body.className = 'light';
-	// 		localStorage.setItem('theme', 'light');
-	// 	} else {
-	// 		theme = 'dark';
-	// 		document.body.className = 'dark';
-	// 		localStorage.setItem('theme', 'dark');
-	// 	}
-	// }
+	function toggle() {
+		toggleState = (toggleState + 1) % 3;
+	}
 
 	function del() {
 		ausgabe = ausgabe.substring(0, ausgabe.length - 1);
@@ -44,13 +34,18 @@
 				<div class="flex place-content-evenly w-[75px] h-[20px] text-white">
 					<p>1</p>
 					<p>2</p>
+					<p>3</p>
 				</div>
 				<div class="flex w-[75px] h-[20px] place-content-center">
-					<input
-						type="checkbox"
-						class="toggle bg-red-500 [--tglbg:#182034] hover:bg-red-700"
-						checked="checked"
-					/>
+					<button
+						class="relative w-[70px] h-[20px] flex items-center rounded-full bg-gray-900 p-1 cursor-pointer"
+						onclick={toggle}
+						>.
+						<div
+							class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-300 w-[18px] h-[18px] rounded-full bg-red-500"
+							style="left: calc({toggleState * 37.5}%)"
+						></div>
+					</button>
 				</div>
 			</div>
 		</div>
